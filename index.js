@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import inquirer from "inquirer";
 let currencies = {
     USD: 1,
@@ -8,19 +9,19 @@ let currencies = {
 };
 let user_answer = await inquirer.prompt([{
         name: "from",
-        message: "enter from message",
+        message: "From which currency would you like to convert?",
         type: "list",
         choices: ["USD", "EUR", "GBP", "INR", "PKR"]
     },
     {
         name: "to",
-        message: "enter to message",
+        message: "To which currency would you like to convert?",
         type: "list",
         choices: ["USD", "EUR", "GBP", "INR", "PKR"]
     },
     {
         name: "amount",
-        message: "set amount",
+        message: "What is the amount you would like to convert?",
         type: "number"
     }
 ]);
@@ -29,8 +30,5 @@ let toAmount = currencies[user_answer.to];
 let amount = user_answer.amount;
 let baseAmount = amount / fromAmount;
 let convert = baseAmount * toAmount;
-console.log(fromAmount);
-console.log(toAmount);
-console.log(amount);
-console.log(baseAmount);
-console.log(convert.toFixed(2));
+console.log(user_answer.from, amount, "into", user_answer.to, "=", user_answer.to, convert.toFixed(2));
+console.log();
