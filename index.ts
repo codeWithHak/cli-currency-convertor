@@ -35,7 +35,7 @@ let toAmount = currencies[user_answer.to]
 let amount = user_answer.amount
 let baseAmount = amount / fromAmount
 let convert = baseAmount * toAmount
-console.log(user_answer.from,amount, "into" ,user_answer.to,"=", user_answer.to,convert.toFixed(2));
+console.log(user_answer.from,amount, "is equivalent to" , user_answer.to,convert.toFixed(2));
 console.log( );
 
 
